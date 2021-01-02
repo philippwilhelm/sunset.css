@@ -1,4 +1,4 @@
-![](images/banner.png)
+![](other/banner.png)
 
 # sunset.css
 
