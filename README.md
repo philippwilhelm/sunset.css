@@ -1,3 +1,5 @@
+![](images/banner.svg)
+
 # sunset.css
 
 This library offers a collection of different CSS-powered hover-effects that can be applied to almost all elements.
