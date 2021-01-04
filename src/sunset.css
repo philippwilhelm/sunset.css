@@ -5,18 +5,34 @@
 
 	--pwa-original-background: #f0f0f0;
 	--pwa-animated-background: #ff6b00;
+
+	--pwa-to-center-original-color: #f0f0f0;
+	--pwa-to-center-animated-color: #ff6b00;
+
+	--pwa-2D-grow: 1.1;
+	--pwa-2D-shrink: 0.9;
+	--pwa-2D-pulse-min: 0.9;
+	--pwa-2D-pulse-max: 1.1;
+	--pwa-2D-move: 10px;
+	--pwa-2D-rotate: 10deg;
+	--pwa-2D-skew: 10deg;
+
+	--pwa-2D-wobble-min: -5px;
+	--pwa-2D-wobble-max: 5px;
+	--pwa-2D-wobble-time: 0.4s;
 }
 
-*:before, *:after {
+*::before, *::after {
 	box-sizing: border-box;
 }
 
-.pwa-element:before, .pwa-element:after {
+.pwa-element::before, .pwa-element::after {
 	z-index: -1;
 }
 
-.pwa-element {
+.pwa-element, .pwa-element:active, .pwa-element:focus, .pwa-element:hover {
 	z-index: 1;
+	outline: none;
 }
 
 /* pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft */
@@ -26,7 +42,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft:after {
+.pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft::after {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -40,7 +56,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft:hover:after, .pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft:focus:after, .pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft:active:after {
+.pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft:hover::after, .pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft:focus::after, .pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft:active::after {
 	transform: scaleX(1);
 	transform-origin: left;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -53,7 +69,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderBottom-easeInFromLeft-easeOutToRight:after {
+.pwa-borders-borderBottom-easeInFromLeft-easeOutToRight::after {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -67,7 +83,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderBottom-easeInFromLeft-easeOutToRight:hover:after, .pwa-borders-borderBottom-easeInFromLeft-easeOutToRight:focus:after, .pwa-borders-borderBottom-easeInFromLeft-easeOutToRight:active:after {
+.pwa-borders-borderBottom-easeInFromLeft-easeOutToRight:hover::after, .pwa-borders-borderBottom-easeInFromLeft-easeOutToRight:focus::after, .pwa-borders-borderBottom-easeInFromLeft-easeOutToRight:active::after {
 	transform: scaleX(1);
 	transform-origin: left;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -80,7 +96,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderBottom-easeInFromRight-easeOutToLeft:after {
+.pwa-borders-borderBottom-easeInFromRight-easeOutToLeft::after {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -94,7 +110,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderBottom-easeInFromRight-easeOutToLeft:hover:after, .pwa-borders-borderBottom-easeInFromRight-easeOutToLeft:focus:after, .pwa-borders-borderBottom-easeInFromRight-easeOutToLeft:active:after {
+.pwa-borders-borderBottom-easeInFromRight-easeOutToLeft:hover::after, .pwa-borders-borderBottom-easeInFromRight-easeOutToLeft:focus::after, .pwa-borders-borderBottom-easeInFromRight-easeOutToLeft:active::after {
 	transform: scaleX(1);
 	transform-origin: right;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -107,7 +123,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderBottom-easeInFromRight-easeOutToRight:after {
+.pwa-borders-borderBottom-easeInFromRight-easeOutToRight::after {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -121,7 +137,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderBottom-easeInFromRight-easeOutToRight:hover:after, .pwa-borders-borderBottom-easeInFromRight-easeOutToRight:focus:after, .pwa-borders-borderBottom-easeInFromRight-easeOutToRight:active:after {
+.pwa-borders-borderBottom-easeInFromRight-easeOutToRight:hover::after, .pwa-borders-borderBottom-easeInFromRight-easeOutToRight:focus::after, .pwa-borders-borderBottom-easeInFromRight-easeOutToRight:active::after {
 	transform: scaleX(1);
 	transform-origin: right;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -134,7 +150,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderBottom-easeInFromCenter-easeOutToCenter:after {
+.pwa-borders-borderBottom-easeInFromCenter-easeOutToCenter::after {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -147,7 +163,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderBottom-easeInFromCenter-easeOutToCenter:hover:after, .pwa-borders-borderBottom-easeInFromCenter-easeOutToCenter:focus:after, .pwa-borders-borderBottom-easeInFromCenter-easeOutToCenter:active:after {
+.pwa-borders-borderBottom-easeInFromCenter-easeOutToCenter:hover::after, .pwa-borders-borderBottom-easeInFromCenter-easeOutToCenter:focus::after, .pwa-borders-borderBottom-easeInFromCenter-easeOutToCenter:active::after {
 	transform: scaleX(1);
 	transition: transform var(--pwa-animation-duration) ease;
 }
@@ -159,7 +175,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderBottom-reveal:after {
+.pwa-borders-borderBottom-reveal::after {
 	display: block;
 	content: '';
 	position: absolute;
@@ -172,9 +188,54 @@
 	opacity: 0;
 }
 
-.pwa-borders-borderBottom-reveal:hover:after, .pwa-borders-borderBottom-reveal:focus:after, .pwa-borders-borderBottom-reveal:active:after {
+.pwa-borders-borderBottom-reveal:hover::after, .pwa-borders-borderBottom-reveal:focus::after, .pwa-borders-borderBottom-reveal:active::after {
 	opacity: 1;
 	transition: opacity var(--pwa-animation-duration) ease;
+}
+
+/* pwa-borders-borderBottom-toCenter */
+
+.pwa-borders-borderBottom-toCenter {
+	display: inline-block;
+	position: relative;
+}
+
+.pwa-borders-borderBottom-toCenter::after {
+	display: block;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	border-bottom: var(--pwa-width) solid var(--pwa-underline);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-borders-borderBottom-toCenter:hover::after, .pwa-borders-borderBottom-toCenter:focus::after, .pwa-borders-borderBottom-toCenter:active::after {
+	transform: scaleX(1);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-borders-borderBottom-toCenter::before {
+	display: block;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	border-bottom: var(--pwa-width) solid var(--pwa-underline);
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-borders-borderBottom-toCenter:hover::before, .pwa-borders-borderBottom-toCenter:focus::before, .pwa-borders-borderBottom-toCenter:active::before {
+	transform: scaleX(1);
+	transition: transform var(--pwa-animation-duration) ease;
 }
 
 /* pwa-borders-borderTop-easeInFromLeft-easeOutToLeft */
@@ -184,7 +245,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderTop-easeInFromLeft-easeOutToLeft:before {
+.pwa-borders-borderTop-easeInFromLeft-easeOutToLeft::before {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -198,7 +259,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderTop-easeInFromLeft-easeOutToLeft:hover:before, .pwa-borders-borderTop-easeInFromLeft-easeOutToLeft:focus:before, .pwa-borders-borderTop-easeInFromLeft-easeOutToLeft:active:before {
+.pwa-borders-borderTop-easeInFromLeft-easeOutToLeft:hover::before, .pwa-borders-borderTop-easeInFromLeft-easeOutToLeft:focus::before, .pwa-borders-borderTop-easeInFromLeft-easeOutToLeft:active::before {
 	transform: scaleX(1);
 	transform-origin: left;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -211,7 +272,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderTop-easeInFromLeft-easeOutToRight:before {
+.pwa-borders-borderTop-easeInFromLeft-easeOutToRight::before {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -225,7 +286,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderTop-easeInFromLeft-easeOutToRight:hover:before, .pwa-borders-borderTop-easeInFromLeft-easeOutToRight:active:before, .pwa-borders-borderTop-easeInFromLeft-easeOutToRight:focus:before {
+.pwa-borders-borderTop-easeInFromLeft-easeOutToRight:hover::before, .pwa-borders-borderTop-easeInFromLeft-easeOutToRight:active::before, .pwa-borders-borderTop-easeInFromLeft-easeOutToRight:focus::before {
 	transform: scaleX(1);
 	transform-origin: left;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -238,7 +299,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderTop-easeInFromRight-easeOutToLeft:before {
+.pwa-borders-borderTop-easeInFromRight-easeOutToLeft::before {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -252,7 +313,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderTop-easeInFromRight-easeOutToLeft:hover:before, .pwa-borders-borderTop-easeInFromRight-easeOutToLeft:focus:before, .pwa-borders-borderTop-easeInFromRight-easeOutToLeft:active:before {
+.pwa-borders-borderTop-easeInFromRight-easeOutToLeft:hover::before, .pwa-borders-borderTop-easeInFromRight-easeOutToLeft:focus::before, .pwa-borders-borderTop-easeInFromRight-easeOutToLeft:active::before {
 	transform: scaleX(1);
 	transform-origin: right;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -265,7 +326,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderTop-easeInFromRight-easeOutToRight:before {
+.pwa-borders-borderTop-easeInFromRight-easeOutToRight::before {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -279,7 +340,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderTop-easeInFromRight-easeOutToRight:hover:before, .pwa-borders-borderTop-easeInFromRight-easeOutToRight:focus:before, .pwa-borders-borderTop-easeInFromRight-easeOutToRight:active:before {
+.pwa-borders-borderTop-easeInFromRight-easeOutToRight:hover::before, .pwa-borders-borderTop-easeInFromRight-easeOutToRight:focus::before, .pwa-borders-borderTop-easeInFromRight-easeOutToRight:active::before {
 	transform: scaleX(1);
 	transform-origin: right;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -292,7 +353,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderTop-easeInFromCenter-easeOutToCenter:before {
+.pwa-borders-borderTop-easeInFromCenter-easeOutToCenter::before {
 	display: block;
 	content: '';
 	transform: scaleX(0);
@@ -305,7 +366,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-borderTop-easeInFromCenter-easeOutToCenter:hover:before, .pwa-borders-borderTop-easeInFromCenter-easeOutToCenter:focus:before, .pwa-borders-borderTop-easeInFromCenter-easeOutToCenter:active:before {
+.pwa-borders-borderTop-easeInFromCenter-easeOutToCenter:hover::before, .pwa-borders-borderTop-easeInFromCenter-easeOutToCenter:focus::before, .pwa-borders-borderTop-easeInFromCenter-easeOutToCenter:active::before {
 	transform: scale(1);
 	transition: transform var(--pwa-animation-duration) ease;
 }
@@ -317,7 +378,7 @@
 	position: relative;
 }
 
-.pwa-borders-borderTop-reveal:before {
+.pwa-borders-borderTop-reveal::before {
 	display: block;
 	content: '';
 	position: absolute;
@@ -330,9 +391,54 @@
 	opacity: 0;
 }
 
-.pwa-borders-borderTop-reveal:hover:before, .pwa-borders-borderTop-reveal:active:before, .pwa-borders-borderTop-reveal:focus:before {
+.pwa-borders-borderTop-reveal:hover::before, .pwa-borders-borderTop-reveal:active::before, .pwa-borders-borderTop-reveal:focus::before {
 	transition: opacity var(--pwa-animation-duration) ease;
 	opacity: 1;
+}
+
+/* pwa-borders-borderTop-toCenter */
+
+.pwa-borders-borderTop-toCenter {
+	display: inline-block;
+	position: relative;
+}
+
+.pwa-borders-borderTop-toCenter::after {
+	display: block;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	border-top: var(--pwa-width) solid var(--pwa-underline);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-borders-borderTop-toCenter:hover::after, .pwa-borders-borderTop-toCenter:focus::after, .pwa-borders-borderTop-toCenter:active::after {
+	transform: scaleX(1);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-borders-borderTop-toCenter::before {
+	display: block;
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	border-top: var(--pwa-width) solid var(--pwa-underline);
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-borders-borderTop-toCenter:hover::before, .pwa-borders-borderTop-toCenter:focus::before, .pwa-borders-borderTop-toCenter:active::before {
+	transform: scaleX(1);
+	transition: transform var(--pwa-animation-duration) ease;
 }
 
 /* pwa-borders-topRightBottomLeft */
@@ -343,7 +449,7 @@
 
 }
 
-.pwa-borders-topRightBottomLeft:before {
+.pwa-borders-topRightBottomLeft::before {
 	content: '';
     position: absolute;
     left: 0;
@@ -355,7 +461,7 @@
     opacity: 0;
 }
 
-.pwa-borders-topRightBottomLeft:after {
+.pwa-borders-topRightBottomLeft::after {
 	content: '';
     position: absolute;
     right: 0;
@@ -367,14 +473,14 @@
     opacity: 0;
 }
 
-.pwa-borders-topRightBottomLeft:hover:before, .pwa-borders-topRightBottomLeft:active:before, .pwa-borders-topRightBottomLeft:focus:before {
+.pwa-borders-topRightBottomLeft:hover::before, .pwa-borders-topRightBottomLeft:active::before, .pwa-borders-topRightBottomLeft:focus::before {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
 	transition: opacity 0s ease, width calc(var(--pwa-animation-duration) / 4) ease, height calc(var(--pwa-animation-duration) / 4) ease calc(var(--pwa-animation-duration) / 4);
 }
 
-.pwa-borders-topRightBottomLeft:hover:after, .pwa-borders-topRightBottomLeft:active:after, .pwa-borders-topRightBottomLeft:focus:after {
+.pwa-borders-topRightBottomLeft:hover::after, .pwa-borders-topRightBottomLeft:active::after, .pwa-borders-topRightBottomLeft:focus::after {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
@@ -388,7 +494,7 @@
 	position: relative;
 }
 
-.pwa-borders-rightBottomLeftTop:before {
+.pwa-borders-rightBottomLeftTop::before {
 	content: '';
     position: absolute;
     right: 0;
@@ -400,7 +506,7 @@
     opacity: 0;
 }
 
-.pwa-borders-rightBottomLeftTop:after {
+.pwa-borders-rightBottomLeftTop::after {
 	content: '';
     position: absolute;
     left: 0;
@@ -412,14 +518,14 @@
     opacity: 0;
 }
 
-.pwa-borders-rightBottomLeftTop:hover:before, .pwa-borders-rightBottomLeftTop:active:before, .pwa-borders-rightBottomLeftTop:focus:before {
+.pwa-borders-rightBottomLeftTop:hover::before, .pwa-borders-rightBottomLeftTop:active::before, .pwa-borders-rightBottomLeftTop:focus::before {
 	height: 100%;
 	width: 100%;
 	opacity: 1;
 	transition: height calc(var(--pwa-animation-duration) / 4) ease, width calc(var(--pwa-animation-duration) / 4) ease calc(var(--pwa-animation-duration) / 4);
 }
 
-.pwa-borders-rightBottomLeftTop:hover:after, .pwa-borders-rightBottomLeftTop:active:after, .pwa-borders-rightBottomLeftTop:focus:after {
+.pwa-borders-rightBottomLeftTop:hover::after, .pwa-borders-rightBottomLeftTop:active::after, .pwa-borders-rightBottomLeftTop:focus::after {
 	height: 100%;
 	width: 100%;
 	opacity: 1;
@@ -433,7 +539,7 @@
 	position: relative;
 }
 
-.pwa-borders-bottomLeftTopRight:before {
+.pwa-borders-bottomLeftTopRight::before {
 	content: '';
     position: absolute;
     right: 0;
@@ -445,7 +551,7 @@
     opacity: 0;
 }
 
-.pwa-borders-bottomLeftTopRight:after {
+.pwa-borders-bottomLeftTopRight::after {
 	content: '';
     position: absolute;
     left: 0;
@@ -457,14 +563,14 @@
     opacity: 0;
 }
 
-.pwa-borders-bottomLeftTopRight:hover:before, .pwa-borders-bottomLeftTopRight:active:before, .pwa-borders-bottomLeftTopRight:focus:before {
+.pwa-borders-bottomLeftTopRight:hover::before, .pwa-borders-bottomLeftTopRight:active::before, .pwa-borders-bottomLeftTopRight:focus::before {
 	width: 100%;
 	height: 100%;
 	opacity: 1;
 	transition: width calc(var(--pwa-animation-duration) / 4) ease, height calc(var(--pwa-animation-duration) / 4) ease calc(var(--pwa-animation-duration) / 4);
 }
 
-.pwa-borders-bottomLeftTopRight:hover:after, .pwa-borders-bottomLeftTopRight:active:after, .pwa-borders-bottomLeftTopRight:focus:after {
+.pwa-borders-bottomLeftTopRight:hover::after, .pwa-borders-bottomLeftTopRight:active::after, .pwa-borders-bottomLeftTopRight:focus::after {
 	width: 100%;
 	height: 100%;
 	opacity: 1;
@@ -478,7 +584,7 @@
 	position: relative;
 }
 
-.pwa-borders-leftTopRightBottom:before {
+.pwa-borders-leftTopRightBottom::before {
 	content: '';
     position: absolute;
     bottom: 0;
@@ -490,7 +596,7 @@
     opacity: 0;
 }
 
-.pwa-borders-leftTopRightBottom:after {
+.pwa-borders-leftTopRightBottom::after {
 	content: '';
     position: absolute;
     top: 0;
@@ -502,14 +608,14 @@
     border-right: var(--pwa-width) solid var(--pwa-underline);
 }
 
-.pwa-borders-leftTopRightBottom:hover:before, .pwa-borders-leftTopRightBottom:active:before, .pwa-borders-leftTopRightBottom:focus:before {
+.pwa-borders-leftTopRightBottom:hover::before, .pwa-borders-leftTopRightBottom:active::before, .pwa-borders-leftTopRightBottom:focus::before {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
 	transition: height calc(var(--pwa-animation-duration) / 4) ease, width calc(var(--pwa-animation-duration) / 4) ease calc(var(--pwa-animation-duration) / 4);
 }
 
-.pwa-borders-leftTopRightBottom:hover:after, .pwa-borders-leftTopRightBottom:active:after, .pwa-borders-leftTopRightBottom:focus:after {
+.pwa-borders-leftTopRightBottom:hover::after, .pwa-borders-leftTopRightBottom:active::after, .pwa-borders-leftTopRightBottom:focus::after {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
@@ -523,7 +629,7 @@
 	position: relative;
 }
 
-.pwa-borders-topLeftBottomRight:before {
+.pwa-borders-topLeftBottomRight::before {
 	content: '';
     position: absolute;
     right: 0;
@@ -535,7 +641,7 @@
     opacity: 0;
 }
 
-.pwa-borders-topLeftBottomRight:after {
+.pwa-borders-topLeftBottomRight::after {
 	content: '';
     position: absolute;
     left: 0;
@@ -547,14 +653,14 @@
     opacity: 0;
 }
 
-.pwa-borders-topLeftBottomRight:hover:before, .pwa-borders-topLeftBottomRight:focus:before, .pwa-borders-topLeftBottomRight:active:before {
+.pwa-borders-topLeftBottomRight:hover::before, .pwa-borders-topLeftBottomRight:focus::before, .pwa-borders-topLeftBottomRight:active::before {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
 	transition: width calc(var(--pwa-animation-duration) / 4) ease, height calc(var(--pwa-animation-duration) / 4) ease calc(var(--pwa-animation-duration) / 4);
 }
 
-.pwa-borders-topLeftBottomRight:hover:after, .pwa-borders-topLeftBottomRight:focus:after, .pwa-borders-topLeftBottomRight:active:after {
+.pwa-borders-topLeftBottomRight:hover::after, .pwa-borders-topLeftBottomRight:focus::after, .pwa-borders-topLeftBottomRight:active::after {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
@@ -568,7 +674,7 @@
 	position: relative;
 }
 
-.pwa-borders-leftBottomRightTop:before {
+.pwa-borders-leftBottomRightTop::before {
 	content: '';
     position: absolute;
     left: 0;
@@ -580,7 +686,7 @@
     opacity: 0;
 }
 
-.pwa-borders-leftBottomRightTop:after {
+.pwa-borders-leftBottomRightTop::after {
 	content: '';
     position: absolute;
     right: 0;
@@ -592,14 +698,14 @@
     opacity: 0;
 }
 
-.pwa-borders-leftBottomRightTop:hover:before, .pwa-borders-leftBottomRightTop:active:before, .pwa-borders-leftBottomRightTop:focus:before {
+.pwa-borders-leftBottomRightTop:hover::before, .pwa-borders-leftBottomRightTop:active::before, .pwa-borders-leftBottomRightTop:focus::before {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
 	transition: opacity 0s ease, height calc(var(--pwa-animation-duration) / 4) ease, width calc(var(--pwa-animation-duration) / 4) ease calc(var(--pwa-animation-duration) / 4);
 }
 
-.pwa-borders-leftBottomRightTop:hover:after, .pwa-borders-leftBottomRightTop:active:after, .pwa-borders-leftBottomRightTop:focus:after {
+.pwa-borders-leftBottomRightTop:hover::after, .pwa-borders-leftBottomRightTop:active::after, .pwa-borders-leftBottomRightTop:focus::after {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
@@ -613,7 +719,7 @@
 	position: relative;
 }
 
-.pwa-borders-bottomRightTopLeft:before {
+.pwa-borders-bottomRightTopLeft::before {
 	content: '';
     position: absolute;
     left: 0;
@@ -625,7 +731,7 @@
     opacity: 0;
 }
 
-.pwa-borders-bottomRightTopLeft:after {
+.pwa-borders-bottomRightTopLeft::after {
 	content: '';
     position: absolute;
     right: 0;
@@ -637,14 +743,14 @@
     opacity: 0;
 }
 
-.pwa-borders-bottomRightTopLeft:hover:before, .pwa-borders-bottomRightTopLeft:active:before, .pwa-borders-bottomRightTopLeft:focus:before {
+.pwa-borders-bottomRightTopLeft:hover::before, .pwa-borders-bottomRightTopLeft:active::before, .pwa-borders-bottomRightTopLeft:focus::before {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
 	transition: opacity 0s ease, width calc(var(--pwa-animation-duration) / 4) ease, border-right-color 0s ease calc(var(--pwa-animation-duration) / 4), height calc(var(--pwa-animation-duration) / 4) ease calc(var(--pwa-animation-duration) / 4);
 }
 
-.pwa-borders-bottomRightTopLeft:hover:after, .pwa-borders-bottomRightTopLeft:active:after, .pwa-borders-bottomRightTopLeft:focus:after {
+.pwa-borders-bottomRightTopLeft:hover::after, .pwa-borders-bottomRightTopLeft:active::after, .pwa-borders-bottomRightTopLeft:focus::after {
 	opacity: 1;
 	width: 100%;
 	height: 100%;
@@ -658,7 +764,7 @@
 	position: relative;
 }
 
-.pwa-borders-rightTopLeftBottom:before {
+.pwa-borders-rightTopLeftBottom::before {
 	content: '';
     position: absolute;
     right: 0;
@@ -671,7 +777,7 @@
     opacity: 0;
 }
 
-.pwa-borders-rightTopLeftBottom:after {
+.pwa-borders-rightTopLeftBottom::after {
 	content: '';
     position: absolute;
     left: 0;
@@ -683,14 +789,14 @@
     opacity: 0;
 }
 
-.pwa-borders-rightTopLeftBottom:hover:before, .pwa-borders-rightTopLeftBottom:active:before, .pwa-borders-rightTopLeftBottom:focus:before {
+.pwa-borders-rightTopLeftBottom:hover::before, .pwa-borders-rightTopLeftBottom:active::before, .pwa-borders-rightTopLeftBottom:focus::before {
 	opacity: 1;
 	width: 100%;
     height: 100%;
     transition: height calc(var(--pwa-animation-duration) / 4) ease, width calc(var(--pwa-animation-duration) / 4) ease calc(var(--pwa-animation-duration) / 4);
 }
 
-.pwa-borders-rightTopLeftBottom:hover:after, .pwa-borders-rightTopLeftBottom:active:after, .pwa-borders-rightTopLeftBottom:focus:after {
+.pwa-borders-rightTopLeftBottom:hover::after, .pwa-borders-rightTopLeftBottom:active::after, .pwa-borders-rightTopLeftBottom:focus::after {
 	opacity: 1;
 	width: 100%;
     height: 100%;
@@ -704,7 +810,7 @@
 	position: relative;
 }
 
-.pwa-borders-topLeftCornerBottomRightCorner:before {
+.pwa-borders-topLeftCornerBottomRightCorner::before {
 	content: '';
     position: absolute;
     left: 0;
@@ -716,7 +822,7 @@
     opacity: 0;
 }
 
-.pwa-borders-topLeftCornerBottomRightCorner:after {
+.pwa-borders-topLeftCornerBottomRightCorner::after {
 	content: '';
     position: absolute;
     right: 0;
@@ -728,14 +834,14 @@
     opacity: 0;
 }
 
-.pwa-borders-topLeftCornerBottomRightCorner:hover:before, .pwa-borders-topLeftCornerBottomRightCorner:focus:before, .pwa-borders-topLeftCornerBottomRightCorner:active:before {
+.pwa-borders-topLeftCornerBottomRightCorner:hover::before, .pwa-borders-topLeftCornerBottomRightCorner:focus::before, .pwa-borders-topLeftCornerBottomRightCorner:active::before {
 	opacity: 1;
 	width: 100%;
     height: 100%;
 	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-topLeftCornerBottomRightCorner:hover:after, .pwa-borders-topLeftCornerBottomRightCorner:focus:after, .pwa-borders-topLeftCornerBottomRightCorner:active:after {
+.pwa-borders-topLeftCornerBottomRightCorner:hover::after, .pwa-borders-topLeftCornerBottomRightCorner:focus::after, .pwa-borders-topLeftCornerBottomRightCorner:active::after {
 	opacity: 1;
 	width: 100%;
     height: 100%;
@@ -749,7 +855,7 @@
 	position: relative;
 }
 
-.pwa-borders-bottomLeftCornerTopRightCorner:before {
+.pwa-borders-bottomLeftCornerTopRightCorner::before {
 	content: '';
     position: absolute;
     left: 0;
@@ -761,7 +867,7 @@
     opacity: 0;
 }
 
-.pwa-borders-bottomLeftCornerTopRightCorner:after {
+.pwa-borders-bottomLeftCornerTopRightCorner::after {
 	content: '';
     position: absolute;
     right: 0;
@@ -773,14 +879,14 @@
     opacity: 0;
 }
 
-.pwa-borders-bottomLeftCornerTopRightCorner:hover:before, .pwa-borders-bottomLeftCornerTopRightCorner:focus:before, .pwa-borders-bottomLeftCornerTopRightCorner:active:before {
+.pwa-borders-bottomLeftCornerTopRightCorner:hover::before, .pwa-borders-bottomLeftCornerTopRightCorner:focus::before, .pwa-borders-bottomLeftCornerTopRightCorner:active::before {
 	opacity: 1;
 	width: 100%;
     height: 100%;
 	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-bottomLeftCornerTopRightCorner:hover:after, .pwa-borders-bottomLeftCornerTopRightCorner:active:after, .pwa-borders-bottomLeftCornerTopRightCorner:focus:after {
+.pwa-borders-bottomLeftCornerTopRightCorner:hover::after, .pwa-borders-bottomLeftCornerTopRightCorner:active::after, .pwa-borders-bottomLeftCornerTopRightCorner:focus::after {
 	opacity: 1;
 	width: 100%;
     height: 100%;
@@ -794,7 +900,7 @@
 	position: relative;
 }
 
-.pwa-borders-reveal:before {
+.pwa-borders-reveal::before {
 	content: '';
     position: absolute;
     left: 0;
@@ -806,7 +912,7 @@
     opacity: 0;
 }
 
-.pwa-borders-reveal:after {
+.pwa-borders-reveal::after {
 	content: '';
     position: absolute;
     right: 0;
@@ -818,12 +924,12 @@
     opacity: 0;
 }
 
-.pwa-borders-reveal:hover:before, .pwa-borders-reveal:active:before, .pwa-borders-reveal:focus:before {
+.pwa-borders-reveal:hover::before, .pwa-borders-reveal:active::before, .pwa-borders-reveal:focus::before {
 	opacity: 1;
 	transition: opacity var(--pwa-animation-duration) ease;
 }
 
-.pwa-borders-reveal:hover:after, .pwa-borders-reveal:active:after, .pwa-borders-reveal:focus:after {
+.pwa-borders-reveal:hover::after, .pwa-borders-reveal:active::after, .pwa-borders-reveal:focus::after {
 	opacity: 1;
 	transition: opacity var(--pwa-animation-duration) ease;
 }
@@ -845,6 +951,52 @@
 	transition: border-radius var(--pwa-animation-duration) ease;
 }
 
+/* .pwa-borders-middle */
+
+.pwa-borders-middle {
+	display: inline-block;
+	position: relative;
+}
+
+.pwa-borders-middle::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border-top: var(--pwa-width) solid var(--pwa-underline);
+	border-bottom: var(--pwa-width) solid var(--pwa-underline);
+	transform: scaleX(0);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-borders-middle:hover::before {
+	transform: scaleX(1);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-borders-middle::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	border-left: var(--pwa-width) solid var(--pwa-underline);
+	border-right: var(--pwa-width) solid var(--pwa-underline);
+	transform: scaleY(0);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-borders-middle:hover::after {
+	transform: scaleY(1);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+
+
+
 /* pwa-background-easeInFromLeft-easeOutToLeft */
 
 .pwa-background-easeInFromLeft-easeOutToLeft {
@@ -853,20 +1005,22 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeInFromLeft-easeOutToLeft:after {
+.pwa-background-easeInFromLeft-easeOutToLeft::after {
 	content: '';
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 0;
+	width: 100%;
 	height: 100%;
 	background: var(--pwa-animated-background);
-	transition: width var(--pwa-animation-duration) ease;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-background-easeInFromLeft-easeOutToLeft:hover:after, .pwa-background-easeInFromLeft-easeOutToLeft:active:after, .pwa-background-easeInFromLeft-easeOutToLeft:focus:after {
-	width: 100%;
-	transition: width var(--pwa-animation-duration) ease;
+.pwa-background-easeInFromLeft-easeOutToLeft:hover::after, .pwa-background-easeInFromLeft-easeOutToLeft:active::after, .pwa-background-easeInFromLeft-easeOutToLeft:focus::after {
+	transform: scaleX(1);
+	transition: transform var(--pwa-animation-duration) ease;
 }
 
 /* pwa-background-easeInFromRight-easeOutToRight */
@@ -877,7 +1031,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeInFromRight-easeOutToRight:after {
+.pwa-background-easeInFromRight-easeOutToRight::after {
 	content: '';
 	position: absolute;
 	right: 0;
@@ -888,7 +1042,7 @@
 	transition: width var(--pwa-animation-duration) ease;
 }
 
-.pwa-background-easeInFromRight-easeOutToRight:hover:after, .pwa-background-easeInFromRight-easeOutToRight:focus:after, .pwa-background-easeInFromRight-easeOutToRight:active:after {
+.pwa-background-easeInFromRight-easeOutToRight:hover::after, .pwa-background-easeInFromRight-easeOutToRight:focus::after, .pwa-background-easeInFromRight-easeOutToRight:active::after {
 	width: 100%;
 	transition: width var(--pwa-animation-duration) ease;
 }
@@ -901,7 +1055,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeInFromTop-easeOutToTop:after {
+.pwa-background-easeInFromTop-easeOutToTop::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -912,7 +1066,7 @@
 	transition: height var(--pwa-animation-duration) ease;
 }
 
-.pwa-background-easeInFromTop-easeOutToTop:hover:after, .pwa-background-easeInFromTop-easeOutToTop:focus:after, .pwa-background-easeInFromTop-easeOutToTop:active:after {
+.pwa-background-easeInFromTop-easeOutToTop:hover::after, .pwa-background-easeInFromTop-easeOutToTop:focus::after, .pwa-background-easeInFromTop-easeOutToTop:active::after {
 	height: 100%;
 	transition: height var(--pwa-animation-duration) ease;
 }
@@ -925,7 +1079,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeInFromBottom-easeOutToBottom:after {
+.pwa-background-easeInFromBottom-easeOutToBottom::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -937,7 +1091,7 @@
 	transition: height var(--pwa-animation-duration) ease;
 }
 
-.pwa-background-easeInFromBottom-easeOutToBottom:hover:after, .pwa-background-easeInFromBottom-easeOutToBottom:active:after, .pwa-background-easeInFromBottom-easeOutToBottom:focus:after {
+.pwa-background-easeInFromBottom-easeOutToBottom:hover::after, .pwa-background-easeInFromBottom-easeOutToBottom:active::after, .pwa-background-easeInFromBottom-easeOutToBottom:focus::after {
 	height: 100%;
 	transition: height var(--pwa-animation-duration) ease;
 }
@@ -950,7 +1104,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeInFromLeft-easeOutToRight:after {
+.pwa-background-easeInFromLeft-easeOutToRight::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -963,7 +1117,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-background-easeInFromLeft-easeOutToRight:hover:after, .pwa-background-easeInFromLeft-easeOutToRight:active:after, .pwa-background-easeInFromLeft-easeOutToRight:focus:after {
+.pwa-background-easeInFromLeft-easeOutToRight:hover::after, .pwa-background-easeInFromLeft-easeOutToRight:active::after, .pwa-background-easeInFromLeft-easeOutToRight:focus::after {
 	transform: scaleX(1);
 	transform-origin: left;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -977,7 +1131,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeInFromRight-easeOutToLeft:after {
+.pwa-background-easeInFromRight-easeOutToLeft::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -990,7 +1144,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-background-easeInFromRight-easeOutToLeft:hover:after, .pwa-background-easeInFromRight-easeOutToLeft:focus:after, .pwa-background-easeInFromRight-easeOutToLeft:active:after {
+.pwa-background-easeInFromRight-easeOutToLeft:hover::after, .pwa-background-easeInFromRight-easeOutToLeft:focus::after, .pwa-background-easeInFromRight-easeOutToLeft:active::after {
 	transform: scaleX(1);
 	transform-origin: right;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -1004,7 +1158,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeInFromTop-easeOutToBottom:after {
+.pwa-background-easeInFromTop-easeOutToBottom::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -1017,7 +1171,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-background-easeInFromTop-easeOutToBottom:hover:after, .pwa-background-easeInFromTop-easeOutToBottom:active:after, .pwa-background-easeInFromTop-easeOutToBottom:focus:after {
+.pwa-background-easeInFromTop-easeOutToBottom:hover::after, .pwa-background-easeInFromTop-easeOutToBottom:active::after, .pwa-background-easeInFromTop-easeOutToBottom:focus::after {
 	transform: scaleY(1);
 	transform-origin: top;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -1031,7 +1185,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeInFromBottom-easeOutToTop:after {
+.pwa-background-easeInFromBottom-easeOutToTop::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -1044,7 +1198,7 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-.pwa-background-easeInFromBottom-easeOutToTop:hover:after, .pwa-background-easeInFromBottom-easeOutToTop:active:after, .pwa-background-easeInFromBottom-easeOutToTop:focus:after {
+.pwa-background-easeInFromBottom-easeOutToTop:hover::after, .pwa-background-easeInFromBottom-easeOutToTop:active::after, .pwa-background-easeInFromBottom-easeOutToTop:focus::after {
 	transform: scaleY(1);
 	transform-origin: bottom;
 	transition: transform var(--pwa-animation-duration) ease;
@@ -1058,7 +1212,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-bounceInFromLeft:after {
+.pwa-background-bounceInFromLeft::after {
 	content: '';
 	position: absolute;
 	left: 0;
@@ -1068,7 +1222,7 @@
 	background: var(--pwa-animated-background);
 }
 
-.pwa-background-bounceInFromLeft:hover:after, .pwa-background-bounceInFromLeft:active:after, .pwa-background-bounceInFromLeft:focus:after {
+.pwa-background-bounceInFromLeft:hover::after, .pwa-background-bounceInFromLeft:active::after, .pwa-background-bounceInFromLeft:focus::after {
 	animation: bounceInFromLeft var(--pwa-animation-duration) forwards;
 }
 
@@ -1095,7 +1249,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-bounceInFromRight:after {
+.pwa-background-bounceInFromRight::after {
 	content: '';
 	position: absolute;
 	right: 0;
@@ -1105,7 +1259,7 @@
 	background: var(--pwa-animated-background);
 }
 
-.pwa-background-bounceInFromRight:hover:after, .pwa-background-bounceInFromRight:focus:after, .pwa-background-bounceInFromRight:active:after {
+.pwa-background-bounceInFromRight:hover::after, .pwa-background-bounceInFromRight:focus::after, .pwa-background-bounceInFromRight:active::after {
 	animation: bounceInFromRight var(--pwa-animation-duration) forwards;
 }
 
@@ -1132,7 +1286,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-bounceInFromTop:after {
+.pwa-background-bounceInFromTop::after {
 	content: '';
 	position: absolute;
 	right: 0;
@@ -1142,7 +1296,7 @@
 	background: var(--pwa-animated-background);
 }
 
-.pwa-background-bounceInFromTop:hover:after, .pwa-background-bounceInFromTop:active:after, .pwa-background-bounceInFromTop:focus:after {
+.pwa-background-bounceInFromTop:hover::after, .pwa-background-bounceInFromTop:active::after, .pwa-background-bounceInFromTop:focus::after {
 	animation: bounceInFromTop var(--pwa-animation-duration) forwards;
 }
 
@@ -1169,7 +1323,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-bounceInFromBottom:after {
+.pwa-background-bounceInFromBottom::after {
 	content: '';
 	position: absolute;
 	right: 0;
@@ -1179,7 +1333,7 @@
 	background: var(--pwa-animated-background);
 }
 
-.pwa-background-bounceInFromBottom:hover:after, .pwa-background-bounceInFromBottom:focus:after, .pwa-background-bounceInFromBottom:active:after {
+.pwa-background-bounceInFromBottom:hover::after, .pwa-background-bounceInFromBottom:focus::after, .pwa-background-bounceInFromBottom:active::after {
 	animation: bounceInFromBottom var(--pwa-animation-duration) forwards;
 }
 
@@ -1206,7 +1360,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeOutFromCenterToLeftRight:after {
+.pwa-background-easeOutFromCenterToLeftRight::after {
 	content: '';
 	position: absolute;
 	left: 50%;
@@ -1215,15 +1369,17 @@
 	width: 0;
 	height: 100%;
 	background: var(--pwa-animated-background);
-	transition: width var(--pwa-animation-duration) ease;
+	transition: width var(--pwa-animation-duration) ease, opacity 0s ease var(--pwa-animation-duration);
+	opacity: 0;
 }
 
-.pwa-background-easeOutFromCenterToLeftRight:hover:after, .pwa-background-easeOutFromCenterToLeftRight:active:after, .pwa-background-easeOutFromCenterToLeftRight:focus:after {
+.pwa-background-easeOutFromCenterToLeftRight:hover::after, .pwa-background-easeOutFromCenterToLeftRight:active::after, .pwa-background-easeOutFromCenterToLeftRight:focus::after {
+	opacity: 1;
 	width: 100%;
 	transition: width var(--pwa-animation-duration) ease;
 }
 
-/* pwa-background-easeOutFromCenterToLeftRight */
+/* pwa-background-easeOutFromCenterToTopBottom */
 
 .pwa-background-easeOutFromCenterToTopBottom {
 	display: inline-block;
@@ -1231,7 +1387,7 @@
 	background: var(--pwa-original-background);
 }
 
-.pwa-background-easeOutFromCenterToTopBottom:after {
+.pwa-background-easeOutFromCenterToTopBottom::after {
 	content: '';
 	position: absolute;
 	top: 50%;
@@ -1240,11 +1396,13 @@
 	height: 0;
 	width: 100%;
 	background: var(--pwa-animated-background);
-	transition: height var(--pwa-animation-duration) ease;
+	transition: height var(--pwa-animation-duration) ease, opacity 0s ease var(--pwa-animation-duration);
+	opacity: 0;
 }
 
-.pwa-background-easeOutFromCenterToTopBottom:hover:after, .pwa-background-easeOutFromCenterToTopBottom:active:after, .pwa-background-easeOutFromCenterToTopBottom:focus:after {
+.pwa-background-easeOutFromCenterToTopBottom:hover::after, .pwa-background-easeOutFromCenterToTopBottom:active::after, .pwa-background-easeOutFromCenterToTopBottom:focus::after {
 	height: 100%;
+	opacity: 1;
 	transition: height var(--pwa-animation-duration) ease;
 }
 
@@ -1254,9 +1412,15 @@
 	display: inline-block;
 	position: relative;
 	background: var(--pwa-original-background);
+	transition: none;
 }
 
-.pwa-background-easeOutFromCenterCubic:after {
+.pwa-background-easeOutFromCenterCubic:hover {
+	background: transparent;
+	transition: background 0s ease var(--pwa-animation-duration);
+}
+
+.pwa-background-easeOutFromCenterCubic::after {
 	content: '';
 	position: absolute;
 	top: 50%;
@@ -1268,7 +1432,7 @@
 	transition: height var(--pwa-animation-duration) ease, width var(--pwa-animation-duration) ease;
 }
 
-.pwa-background-easeOutFromCenterCubic:hover:after, .pwa-background-easeOutFromCenterCubic:active:after, .pwa-background-easeOutFromCenterCubic:focus:after {
+.pwa-background-easeOutFromCenterCubic:hover::after, .pwa-background-easeOutFromCenterCubic:active::after, .pwa-background-easeOutFromCenterCubic:focus::after {
 	height: 100%;
 	width: 100%;
 	transition: height var(--pwa-animation-duration) ease, width var(--pwa-animation-duration) ease;
@@ -1280,9 +1444,15 @@
 	display: inline-block;
 	position: relative;
 	background: var(--pwa-original-background);
+	transition: none;
 }
 
-.pwa-background-easeOutFromCenterRound:after {
+.pwa-background-easeOutFromCenterRound:hover {
+	background: none;
+	transition: background 0s ease var(--pwa-animation-duration);
+}
+
+.pwa-background-easeOutFromCenterRound::after {
 	content: '';
 	position: absolute;
 	top: 50%;
@@ -1295,10 +1465,588 @@
 	transition: height var(--pwa-animation-duration) ease, width var(--pwa-animation-duration) ease, border-radius calc(2 * var(--pwa-animation-duration)) ease;
 }
 
-.pwa-background-easeOutFromCenterRound:hover:after, .pwa-background-easeOutFromCenterRound:active:after, .pwa-background-easeOutFromCenterRound:focus:after {
+.pwa-background-easeOutFromCenterRound:hover::after, .pwa-background-easeOutFromCenterRound:active::after, .pwa-background-easeOutFromCenterRound:focus::after {
 	height: 100%;
 	width: 100%;
 	border-radius: 0;
 	transition: height var(--pwa-animation-duration) ease, width var(--pwa-animation-duration) ease, border-radius calc(2 * var(--pwa-animation-duration)) ease;
 }
 
+/* pwa-background-easeInFromLeftRight */
+
+.pwa-background-easeInFromLeftRight {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+}
+
+.pwa-background-easeInFromLeftRight::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--pwa-to-center-original-color);
+	transform: scaleX(1);
+	transform-origin: center;
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-background-easeInFromLeftRight:hover::after, .pwa-background-easeInFromLeftRight:active::after, .pwa-background-easeInFromLeftRight:focus::after {
+	transform: scaleX(0);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* pwa-background-easeInFromTopBottom */
+
+.pwa-background-easeInFromTopBottom {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+}
+
+.pwa-background-easeInFromTopBottom::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--pwa-to-center-original-color);
+	transform: scaleY(1);
+	transform-origin: center;
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-background-easeInFromTopBottom:hover::after, .pwa-background-easeInFromTopBottom:active::after, .pwa-background-easeInFromTopBottom:focus::after {
+	transform: scaleY(0);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* pwa-background-easeInToCenterCubic */
+
+.pwa-background-easeInToCenterCubic {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+}
+
+.pwa-background-easeInToCenterCubic::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--pwa-to-center-original-color);
+	transform: scale(1);
+	transform-origin: center;
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-background-easeInToCenterCubic:hover::after, .pwa-background-easeInToCenterCubic:active::after, .pwa-background-easeInToCenterCubic:focus::after {
+	transform: scale(0);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* pwa-background-easeInToCenterRound */
+
+.pwa-background-easeInToCenterRound {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+}
+
+.pwa-background-easeInToCenterRound::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--pwa-to-center-original-color);
+	transform: scale(1);
+	transform-origin: center;
+	border-radius: 0;
+	transition: transform var(--pwa-animation-duration) ease, border-radius calc(2 * var(--pwa-animation-duration)) ease;
+}
+
+.pwa-background-easeInToCenterRound:hover::after, .pwa-background-easeInToCenterRound:active::after, .pwa-background-easeInToCenterRound:focus::after {
+	transform: scale(0);
+	border-radius: 50%;
+	transition: transform var(--pwa-animation-duration) ease, border-radius calc(0.5 * var(--pwa-animation-duration)) ease;
+}
+
+/* .pwa-background-ease */
+
+.pwa-background-ease {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: var(--pwa-animation-duration) ease;
+}
+
+.pwa-background-ease:hover {
+	background: var(--pwa-animated-background);
+	transition: var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-grow */
+
+.pwa-2D-grow {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-grow:hover, .pwa-2D-grow:active, .pwa-2D-grow:focus {
+	transform: scale(var(--pwa-2D-grow));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-shrink */
+
+.pwa-2D-shrink {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-shrink:hover, .pwa-2D-shrink:active, .pwa-2D-shrink:focus {
+	transform: scale(var(--pwa-2D-shrink));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-pulse-smallBigNormal */
+
+.pwa-2D-pulse-smallBigNormal {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+}
+
+.pwa-2D-pulse-smallBigNormal:hover, .pwa-2D-pulse-smallBigNormal:active, .pwa-2D-pulse-smallBigNormal:focus {
+	animation: pwa-2D-pulse-smallBigNormal var(--pwa-animation-duration) forwards;
+}
+
+@keyframes pwa-2D-pulse-smallBigNormal {
+	0% {
+		transform: scale(1.0);
+	}
+	25% {
+		transform: scale(var(--pwa-2D-pulse-min));
+	}
+	50% {
+		transform: scale(1.0);
+	}
+	75% {
+		transform: scale(var(--pwa-2D-pulse-max));
+	}
+	100% {
+		transform: scale(1.0);
+	}
+}
+
+/* .pwa-2D-pulse-bigSmallNormal */
+
+.pwa-2D-pulse-bigSmallNormal {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+}
+
+.pwa-2D-pulse-bigSmallNormal:hover, .pwa-2D-pulse-bigSmallNormal:active, .pwa-2D-pulse-bigSmallNormal:focus {
+	animation: pwa-2D-pulse-bigSmallNormal var(--pwa-animation-duration) forwards;
+}
+
+@keyframes pwa-2D-pulse-bigSmallNormal {
+	0% {
+		transform: scale(1.0);
+	}
+	25% {
+		transform: scale(var(--pwa-2D-pulse-max));
+	}
+	50% {
+		transform: scale(1.0);
+	}
+	75% {
+		transform: scale(var(--pwa-2D-pulse-min));
+	}
+	100% {
+		transform: scale(1.0);
+	}
+}
+
+/* .pwa-2D-pulse-bigSmallBig */
+
+.pwa-2D-pulse-bigSmallBig {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+}
+
+.pwa-2D-pulse-bigSmallBig:hover, .pwa-2D-pulse-bigSmallBig:active, .pwa-2D-pulse-bigSmallBig:focus {
+	animation: pwa-2D-pulse-bigSmallBig var(--pwa-animation-duration) forwards;
+}
+
+@keyframes pwa-2D-pulse-bigSmallBig {
+	0% {
+		transform: scale(1.0);
+	}
+	20% {
+		transform: scale(var(--pwa-2D-pulse-max));
+	}
+	40% {
+		transform: scale(1.0);
+	}
+	60% {
+		transform: scale(var(--pwa-2D-pulse-min));
+	}
+	80% {
+		transform: scale(1.0);
+	}
+	100% {
+		transform: scale(var(--pwa-2D-pulse-max));
+	}
+}
+
+/* .pwa-2D-pulse-smallBigSmall */
+
+.pwa-2D-pulse-smallBigSmall {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+}
+
+.pwa-2D-pulse-smallBigSmall:hover, .pwa-2D-pulse-smallBigSmall:active, .pwa-2D-pulse-smallBigSmall:focus {
+	animation: pwa-2D-pulse-smallBigSmall var(--pwa-animation-duration) forwards;
+}
+
+@keyframes pwa-2D-pulse-smallBigSmall {
+	0% {
+		transform: scale(1.0);
+	}
+	20% {
+		transform: scale(var(--pwa-2D-pulse-min));
+	}
+	40% {
+		transform: scale(1.0);
+	}
+	60% {
+		transform: scale(var(--pwa-2D-pulse-max));
+	}
+	80% {
+		transform: scale(1.0);
+	}
+	100% {
+		transform: scale(var(--pwa-2D-pulse-min));
+	}
+}
+
+/* .pwa-2D-move-up */
+
+.pwa-2D-move-up {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-move-up:hover, .pwa-2D-move-up:active, .pwa-2D-move-up:focus {
+	transform: translateY(calc(-1 * var(--pwa-2D-move)));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-move-down */
+
+.pwa-2D-move-down {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-move-down:hover, .pwa-2D-move-down:active, .pwa-2D-move-down:focus {
+	transform: translateY(var(--pwa-2D-move));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-move-left */
+
+.pwa-2D-move-left {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-move-left:hover, .pwa-2D-move-left:active, .pwa-2D-move-left:focus {
+	transform: translateX(calc(-1 * var(--pwa-2D-move)));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-move-right */
+
+.pwa-2D-move-right {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-move-right:hover, .pwa-2D-move-right:active, .pwa-2D-move-right:focus {
+	transform: translateX(var(--pwa-2D-move));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-rotate-clockwise */
+
+.pwa-2D-rotate-clockwise {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-rotate-clockwise:hover, .pwa-2D-rotate-clockwise:active, .pwa-2D-rotate-clockwise:focus {
+	transform: rotate(var(--pwa-2D-rotate));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-rotate-counterClockwise */
+
+.pwa-2D-rotate-counterClockwise {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-rotate-counterClockwise:hover, .pwa-2D-rotate-counterClockwise:active, .pwa-2D-rotate-counterClockwise:focus {
+	transform: rotate(calc(0deg - var(--pwa-2D-rotate)));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-skew-forwards */
+
+.pwa-2D-skew-forwards {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-skew-forwards:hover, .pwa-2D-skew-forwards:active, .pwa-2D-skew-forwards:focus {
+	transform: skew(calc(0deg - var(--pwa-2D-skew)));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-2D-skew-backwards */
+
+.pwa-2D-skew-backwards {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-to-center-animated-color);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-2D-skew-backwards:hover, .pwa-2D-skew-backwards:active, .pwa-2D-skew-backwards:focus {
+	transform: skew(var(--pwa-2D-skew));
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+
+/* .pwa-2D-wobble-leftRight */
+
+.pwa-2D-wobble-leftRight {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+}
+
+.pwa-2D-wobble-leftRight:hover {
+	animation: wobble-leftRight var(--pwa-2D-wobble-time) linear;
+}
+
+@keyframes wobble-leftRight {
+	0% {
+		transform: translateX(0);
+	}
+	10% {
+		transform: translateX(var(--pwa-2D-wobble-min));
+	}
+	20% {
+		transform: translateX(0);
+	}
+	30% {
+		transform: translateX(var(--pwa-2D-wobble-max));
+	}
+	40% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(var(--pwa-2D-wobble-min));
+	}
+	60% {
+		transform: translateX(0);
+	}
+	70% {
+		transform: translateX(var(--pwa-2D-wobble-max));
+	}
+	80% {
+		transform: translateX(0);
+	}
+	90% {
+		transform: translateX(var(--pwa-2D-wobble-min));
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/* .pwa-2D-wobble-topBottom */
+
+.pwa-2D-wobble-topBottom {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+}
+
+.pwa-2D-wobble-topBottom:hover {
+	animation: wobble-topBottom var(--pwa-2D-wobble-time) linear;
+}
+
+@keyframes wobble-topBottom {
+	0% {
+		transform: translateY(0);
+	}
+	10% {
+		transform: translateY(var(--pwa-2D-wobble-min));
+	}
+	20% {
+		transform: translateY(0);
+	}
+	30% {
+		transform: translateY(var(--pwa-2D-wobble-max));
+	}
+	40% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(var(--pwa-2D-wobble-min));
+	}
+	60% {
+		transform: translateY(0);
+	}
+	70% {
+		transform: translateY(var(--pwa-2D-wobble-max));
+	}
+	80% {
+		transform: translateY(0);
+	}
+	90% {
+		transform: translateY(var(--pwa-2D-wobble-min));
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+/* .pwa-2D-wobble-bottomLeftTopRight */
+
+.pwa-2D-wobble-bottomLeftTopRight {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+}
+
+.pwa-2D-wobble-bottomLeftTopRight:hover {
+	animation: wobble-bottomLeftTopRight var(--pwa-2D-wobble-time) linear;
+}
+
+@keyframes wobble-bottomLeftTopRight {
+	0% {
+		transform: translate(0);
+	}
+	10% {
+		transform: translate(var(--pwa-2D-wobble-min), var(--pwa-2D-wobble-max));
+	}
+	20% {
+		transform: translate(0);
+	}
+	30% {
+		transform: translate(var(--pwa-2D-wobble-max), var(--pwa-2D-wobble-min));
+	}
+	40% {
+		transform: translate(0);
+	}
+	50% {
+		transform: translate(var(--pwa-2D-wobble-min), var(--pwa-2D-wobble-max));
+	}
+	60% {
+		transform: translate(0);
+	}
+	70% {
+		transform: translate(var(--pwa-2D-wobble-max), var(--pwa-2D-wobble-min));
+	}
+	80% {
+		transform: translate(0);
+	}
+	90% {
+		transform: translate(var(--pwa-2D-wobble-min), var(--pwa-2D-wobble-max));
+	}
+	100% {
+		transform: translate(0);
+	}
+}
+
+/* .pwa-2D-wobble-topLeftBottomRight */
+
+.pwa-2D-wobble-topLeftBottomRight {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+}
+
+.pwa-2D-wobble-topLeftBottomRight:hover {
+	animation: wobble-topLeftBottomRigh var(--pwa-2D-wobble-time) linear;
+}
+
+@keyframes wobble-topLeftBottomRigh {
+	0% {
+		transform: translate(0);
+	}
+	10% {
+		transform: translate(var(--pwa-2D-wobble-min), var(--pwa-2D-wobble-min));
+	}
+	20% {
+		transform: translate(0);
+	}
+	30% {
+		transform: translate(var(--pwa-2D-wobble-max), var(--pwa-2D-wobble-max));
+	}
+	40% {
+		transform: translate(0);
+	}
+	50% {
+		transform: translate(var(--pwa-2D-wobble-min), var(--pwa-2D-wobble-min));
+	}
+	60% {
+		transform: translate(0);
+	}
+	70% {
+		transform: translate(var(--pwa-2D-wobble-max), var(--pwa-2D-wobble-max));
+	}
+	80% {
+		transform: translate(0);
+	}
+	90% {
+		transform: translate(var(--pwa-2D-wobble-min), var(--pwa-2D-wobble-min));
+	}
+	100% {
+		transform: translate(0);
+	}
+}
