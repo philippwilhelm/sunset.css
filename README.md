@@ -29,7 +29,7 @@ Feel free to [open an issue](https://github.com/philippwilhelm/sunset.css/issues
 
 ## Contributing
 
-Please see [CONTRIBUTE.md](https://github.com/philippwilhelm/sunset.css/blob/main/CONTRIBUTE.md).
+Please see [CONTRIBUTE](https://github.com/philippwilhelm/sunset.css/wiki/4.-Contribute).
 
 ## License
 
