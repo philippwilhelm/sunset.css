@@ -4,6 +4,11 @@
 
 This library offers a collection of different CSS-powered transitions.
 
+[Documentation](https://github.com/philippwilhelm/sunset.css/wiki)
+
+[sunsetcss.com](https://sunsetcss.com/)
+
+[Twitter](https://twitter.com/sunset_css)
 
 ## Download
 
