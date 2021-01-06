@@ -22,6 +22,9 @@ Alternatively, you can install it via npm:
 npm i sunset.css
 ```
 
+This library is also available via [CDN](https://www.jsdelivr.com/package/npm/sunset.css).
+
+
 ## Usage
 
 After downloading the source-file, you will have to include it in your .html-file:
