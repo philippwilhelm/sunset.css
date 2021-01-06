@@ -16,6 +16,12 @@ The only file you will need is [sunset.min.css](https://github.com/philippwilhel
 
 Download it and save it in the CSS-directory of your project.
 
+Alternatively, you can install it via npm:
+
+```
+npm i sunset.css
+```
+
 ## Usage
 
 After downloading the source-file, you will have to include it in your .html-file:

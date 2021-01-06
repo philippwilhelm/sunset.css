@@ -20,6 +20,8 @@
 	--pwa-2D-wobble-min: -5px;
 	--pwa-2D-wobble-max: 5px;
 	--pwa-2D-wobble-time: 0.4s;
+
+	--shadow-color: gray;
 }
 
 *::before, *::after {
@@ -34,6 +36,14 @@
 	z-index: 1;
 	outline: none;
 }
+
+/*
+	======================================================================================
+	======================================================================================
+	Border-effects
+	======================================================================================
+	======================================================================================
+ */
 
 /* pwa-borders-borderBottom-easeInFromLeft-easeOutToLeft */
 
@@ -994,7 +1004,13 @@
 	transition: transform var(--pwa-animation-duration) ease;
 }
 
-
+/*
+	======================================================================================
+	======================================================================================
+	Background-effects
+	======================================================================================
+	======================================================================================
+ */
 
 
 /* pwa-background-easeInFromLeft-easeOutToLeft */
@@ -1592,6 +1608,14 @@
 	transition: var(--pwa-animation-duration) ease;
 }
 
+/*
+	======================================================================================
+	======================================================================================
+	2D-effects
+	======================================================================================
+	======================================================================================
+ */
+
 /* .pwa-2D-grow */
 
 .pwa-2D-grow {
@@ -2049,4 +2073,1226 @@
 	100% {
 		transform: translate(0);
 	}
+}
+
+/*
+	======================================================================================
+	======================================================================================
+	Shadow-effects
+	======================================================================================
+	======================================================================================
+ */
+
+/* .pwa-shadow-bottomLeft */
+
+.pwa-shadow-bottomLeft {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-bottomLeft:hover {
+	box-shadow: -4px 4px 4px 0 var(--shadow-color);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-shadow-bottomRight */
+
+.pwa-shadow-bottomRight {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-bottomRight:hover {
+	box-shadow: 4px 4px 4px 0 var(--shadow-color);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-shadow-topLeft */
+
+.pwa-shadow-topLeft {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-topLeft:hover {
+	box-shadow: -4px -4px 4px 0 var(--shadow-color);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-shadow-topRight */
+
+.pwa-shadow-topRight {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-topRight:hover {
+	box-shadow: 4px -4px 4px 0 var(--shadow-color);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-shadow-topBottomLeftRight */
+
+.pwa-shadow-topBottomLeftRight {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-topBottomLeftRight:hover {
+	box-shadow: 0 0 10px 2px var(--shadow-color);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-shadow-bottom */
+
+.pwa-shadow-bottom {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-bottom:hover {
+	box-shadow: 0 8px 6px -4px var(--shadow-color);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-shadow-bottomGrow */
+
+.pwa-shadow-bottomGrow {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: box-shadow var(--pwa-animation-duration) ease, transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-bottomGrow:hover {
+	box-shadow: 0 8px 6px -4px var(--shadow-color);
+	transform: scale(1.1);
+	transition: box-shadow var(--pwa-animation-duration) ease, transform var(--pwa-animation-duration) ease;
+}
+
+/* .pwa-shadow-bottomCircle */
+
+.pwa-shadow-bottomCircle {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-bottomCircle:hover {
+	transform: translateY(-10px);
+	transition: transform calc(0.5 * var(--pwa-animation-duration)) ease;
+}
+
+.pwa-shadow-bottomCircle::after {
+	position: absolute;
+	bottom: -15px;
+	left: 50%;
+	width: 90%;
+	height: 10px;
+	content: '';
+	border-radius: 50%;
+	background: radial-gradient(ellipse at center, var(--shadow-color), #FFFFFF);
+	transform: translateX(-50%);
+	opacity: 0;
+}
+
+.pwa-shadow-bottomCircle:hover::after {
+	opacity: 1;
+	transition: opacity calc(0.5 * var(--pwa-animation-duration)) ease calc(0.5 * var(--pwa-animation-duration));
+}
+
+/* .pwa-shadow-bottomTop */
+
+.pwa-shadow-bottomTop {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-bottomTop:hover {
+	box-shadow: 0 -5px 6px -4px var(--shadow-color);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-bottomTop::after {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	content: '';
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+.pwa-shadow-bottomTop:hover::after {
+	box-shadow: 0 5px 6px -4px var(--shadow-color);
+	transition: box-shadow var(--pwa-animation-duration) ease;
+}
+
+/*
+	======================================================================================
+	======================================================================================
+	Image-effects
+	======================================================================================
+	======================================================================================
+ */
+
+/* pwa-images-1 */
+
+.pwa-images-1 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-1-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-1-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-1:hover > .pwa-images-1-text {
+	top: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-2 */
+
+.pwa-images-2 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-2-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-2-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-2:hover > .pwa-images-2-text {
+	top: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-3 */
+
+.pwa-images-3 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-3-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-3-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: -100%;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-3:hover > .pwa-images-3-text {
+	left: 0;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-4 */
+
+.pwa-images-4 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-4-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-4-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 100%;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-4:hover > .pwa-images-4-text {
+	left: 0;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-5 */
+
+.pwa-images-5 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-5-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-5-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-5:hover > .pwa-images-5-text {
+	top: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-5:hover > .pwa-images-5-image {
+	top: 100%;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-6 */
+
+.pwa-images-6 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-6-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-6-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-6:hover > .pwa-images-6-text {
+	top: 0;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-6:hover > .pwa-images-6-image {
+	top: -100%;
+	transition: top var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-7 */
+
+.pwa-images-7 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-7-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-7-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: -100%;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-7:hover > .pwa-images-7-text {
+	left: 0;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-7:hover > .pwa-images-7-image {
+	left: 100%;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-8 */
+
+.pwa-images-8 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-8-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-8-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 100%;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-8:hover > .pwa-images-8-text {
+	left: 0;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-8:hover > .pwa-images-8-image {
+	left: -100%;
+	transition: left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-9 */
+
+.pwa-images-9 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-9-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-9-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+	transform: scaleX(0);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-9:hover > .pwa-images-9-text {
+	transform: scaleX(1);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-10 */
+
+.pwa-images-10 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-10-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-10-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+	transform: scaleY(0);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-10:hover > .pwa-images-10-text {
+	transform: scaleY(1);
+	transition: transform var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-11 */
+
+.pwa-images-11 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-11-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+
+}
+
+.pwa-images-11-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-11:hover > .pwa-images-11-text {
+	opacity: 1;
+	transition: opacity var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-12 */
+
+.pwa-images-12 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-12-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-12-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+	left: -100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-12:hover > .pwa-images-12-text {
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-13 */
+
+.pwa-images-13 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-13-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-13-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+	left: 100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-13:hover > .pwa-images-13-text {
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-14 */
+
+.pwa-images-14 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-14-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-14-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	left: -100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-14:hover > .pwa-images-14-text {
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-15 */
+
+.pwa-images-15 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-15-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+}
+
+.pwa-images-15-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-15:hover > .pwa-images-15-text {
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-16 */
+
+.pwa-images-16 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-16-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-16-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+	left: -100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-16:hover > .pwa-images-16-text {
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-16:hover > .pwa-images-16-image {
+	top: 100%;
+	left: 100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-17 */
+
+.pwa-images-17 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-17-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-17-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: -100%;
+	left: 100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-17:hover > .pwa-images-17-text {
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-17:hover > .pwa-images-17-image {
+	top: 100%;
+	left: -100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-18 */
+
+.pwa-images-18 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-18-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-18-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	left: -100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-18:hover > .pwa-images-18-text {
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-18:hover > .pwa-images-18-image {
+	top: -100%;
+	left: 100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+/* pwa-images-19 */
+
+.pwa-images-19 {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+
+.pwa-images-19-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	content: '';
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-19-text {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	left: 100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-19:hover > .pwa-images-19-text {
+	top: 0;
+	left: 0;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+.pwa-images-19:hover > .pwa-images-19-image {
+	top: -100%;
+	left: -100%;
+	transition: top var(--pwa-animation-duration) ease, left var(--pwa-animation-duration) ease;
+}
+
+/*
+	======================================================================================
+	======================================================================================
+	Hamburger-effects
+	======================================================================================
+	======================================================================================
+ */
+
+/* .pwa-hamburgerMenu1 */
+
+.pwa-hamburgerMenu1 {
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburger1,
+.pwa-hamburgerCheckbox1 {
+	position: absolute;
+	z-index: 998;
+}
+
+.pwa-hamburger1 {
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburgerCheckbox1 {
+	transform: scale(3);
+	opacity: 0;
+	z-index: 999;
+}
+
+.pwa-hamburgerLayer1 {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 3px;
+}
+
+.pwa-hamburgerLayer1:nth-of-type(1) {
+	margin-top: 7px;
+	transition: transform 0.4s ease, margin-top 0.3s ease 0.4s;
+}
+
+.pwa-hamburgerLayer1:nth-of-type(2) {
+	margin-top: 15px;
+	transition: opacity 0.2s ease 0.5s;
+}
+
+.pwa-hamburgerLayer1:nth-of-type(3) {
+	margin-top: 23px;
+	transition: transform 0.4s ease, margin-top 0.3s ease 0.4s;
+}
+
+.pwa-hamburgerCheckbox1:checked + .pwa-hamburger1 > .pwa-hamburgerLayer1:nth-of-type(1) {
+	margin-top: 15px;
+	transform: rotate(45deg);
+	transition: margin-top 0.3s ease, transform 0.4s ease 0.3s;
+}
+
+.pwa-hamburgerCheckbox1:checked + .pwa-hamburger1 > .pwa-hamburgerLayer1:nth-of-type(2) {
+	opacity: 0;
+	transition: none;
+}
+
+.pwa-hamburgerCheckbox1:checked + .pwa-hamburger1 > .pwa-hamburgerLayer1:nth-of-type(3) {
+	margin-top: 15px;
+	transform: rotate(-45deg);
+	transition: margin-top 0.3s ease, transform 0.4s ease 0.3s;
+}
+
+/* .pwa-hamburgerMenu2 */
+
+.pwa-hamburgerMenu2 {
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburger2,
+.pwa-hamburgerCheckbox2 {
+	position: absolute;
+	z-index: 998;
+}
+
+.pwa-hamburger2 {
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburgerCheckbox2 {
+	transform: scale(3);
+	opacity: 0;
+	z-index: 999;
+}
+
+.pwa-hamburgerLayer2 {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 3px;
+}
+
+.pwa-hamburgerLayer2:nth-of-type(1) {
+	margin-top: 7px;
+	transition: transform 0.4s ease, margin-top 0.3s ease 0.4s;
+}
+
+.pwa-hamburgerLayer2:nth-of-type(2) {
+	margin-top: 15px;
+	transition: transform 0.3s ease 0.3s;
+
+}
+
+.pwa-hamburgerLayer2:nth-of-type(3) {
+	margin-top: 23px;
+	transition: transform 0.4s ease, margin-top 0.3s ease 0.4s;
+}
+
+.pwa-hamburgerCheckbox2:checked + .pwa-hamburger2 > .pwa-hamburgerLayer2:nth-of-type(1) {
+	margin-top: 15px;
+	transform: rotate(45deg);
+	transition: margin-top 0.3s ease, transform 0.4s ease 0.3s;
+}
+
+.pwa-hamburgerCheckbox2:checked + .pwa-hamburger2 > .pwa-hamburgerLayer2:nth-of-type(2) {
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: transform 0.3s ease;
+}
+
+.pwa-hamburgerCheckbox2:checked + .pwa-hamburger2 > .pwa-hamburgerLayer2:nth-of-type(3) {
+	margin-top: 15px;
+	transform: rotate(-45deg);
+	transition: margin-top 0.3s ease, transform 0.4s ease 0.3s;
+}
+
+/* .pwa-hamburgerMenu3 */
+
+.pwa-hamburgerMenu3 {
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburger3,
+.pwa-hamburgerCheckbox3 {
+	position: absolute;
+	z-index: 998;
+}
+
+.pwa-hamburger3 {
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburgerCheckbox3 {
+	transform: scale(3);
+	opacity: 0;
+	z-index: 999;
+}
+
+.pwa-hamburgerLayer3 {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 3px;
+}
+
+.pwa-hamburgerLayer3:nth-of-type(1) {
+	margin-top: 7px;
+	transition: transform 0.3s ease, margin-top 0.1s ease 0.3s;
+}
+
+.pwa-hamburgerLayer3:nth-of-type(2) {
+	margin-top: 15px;
+	transition: opacity 0.1s ease 0.3s;
+}
+
+.pwa-hamburgerLayer3:nth-of-type(3) {
+	margin-top: 23px;
+	transition: transform 0.3s ease, margin-top 0.1s ease 0.3s;
+}
+
+.pwa-hamburgerCheckbox3:checked + .pwa-hamburger3 > .pwa-hamburgerLayer3:nth-of-type(1) {
+	margin-top: 15px;
+	transform: rotate(45deg);
+	transition: margin-top 0.1s ease, transform 0.3s ease 0.1s;
+}
+
+.pwa-hamburgerCheckbox3:checked + .pwa-hamburger3 > .pwa-hamburgerLayer3:nth-of-type(2) {
+	opacity: 0;
+	transition: opacity 0.1s ease;
+}
+
+.pwa-hamburgerCheckbox3:checked + .pwa-hamburger3 > .pwa-hamburgerLayer3:nth-of-type(3) {
+	margin-top: 15px;
+	transform: rotate(315deg);
+	transition: margin-top 0.1s ease, transform 0.3s ease 0.1s;
+}
+
+/* .pwa-hamburgerMenu4 */
+
+.pwa-hamburgerMenu4 {
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburger4,
+.pwa-hamburgerCheckbox4 {
+	position: absolute;
+	z-index: 998;
+}
+
+.pwa-hamburger4 {
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburgerCheckbox4 {
+	transform: scale(3);
+	opacity: 0;
+	z-index: 999;
+}
+
+.pwa-hamburgerLayer4 {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 3px;
+}
+
+.pwa-hamburgerLayer4:nth-of-type(1) {
+	margin-top: 7px;
+	transition: transform 0.2s ease, width 0.1s ease 0.2s;
+}
+
+.pwa-hamburgerLayer4:nth-of-type(2) {
+	margin-top: 15px;
+	transition: transform 0.2s ease;
+}
+
+.pwa-hamburgerLayer4:nth-of-type(3) {
+	margin-top: 23px;
+	right: 0;
+	transition: transform 0.2s ease, width 0.1s ease 0.2s;
+}
+
+.pwa-hamburgerCheckbox4:checked + .pwa-hamburger4 > .pwa-hamburgerLayer4:nth-of-type(1) {
+	width: 15px;
+	transform: rotate(45deg);
+	top: 2px;
+	left: 2px;
+	transition: width 0.1s ease, transform 0.2s ease 0.1s;
+}
+
+.pwa-hamburgerCheckbox4:checked + .pwa-hamburger4 > .pwa-hamburgerLayer4:nth-of-type(2) {
+	transform: rotate(-45deg);
+	transition: transform 0.2s ease 0.1s;
+}
+
+.pwa-hamburgerCheckbox4:checked + .pwa-hamburger4 > .pwa-hamburgerLayer4:nth-of-type(3) {
+	width: 15px;
+	transform: rotate(45deg);
+	bottom: 6px;
+	right: 1px;
+	transition: width 0.1s ease, transform 0.2s ease 0.1s;
+}
+
+/* .pwa-hamburgerMenu5 */
+
+.pwa-hamburgerMenu5 {
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburger5,
+.pwa-hamburgerCheckbox5 {
+	position: absolute;
+	z-index: 998;
+}
+
+.pwa-hamburger5 {
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburgerCheckbox5 {
+	transform: scale(3);
+	opacity: 0;
+	z-index: 999;
+}
+
+.pwa-hamburgerLayer5 {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 3px;
+}
+
+.pwa-hamburgerLayer5:nth-of-type(1) {
+	margin-top: 7px;
+	transition: margin-top 0.2s ease, transform 0.2s ease;
+}
+
+.pwa-hamburgerLayer5:nth-of-type(2) {
+	margin-top: 15px;
+	transition: opacity 0.1s ease 0.2s;
+}
+
+.pwa-hamburgerLayer5:nth-of-type(3) {
+	margin-top: 23px;
+	transition: margin-top 0.2s ease, transform 0.2s ease;
+}
+
+.pwa-hamburgerCheckbox5:checked + .pwa-hamburger5 > .pwa-hamburgerLayer5:nth-of-type(1) {
+	margin-top: 15px;
+	transform: rotate(405deg);
+	transition: margin-top 0.2s ease 0.1s, transform 0.2s ease 0.1s;
+}
+
+.pwa-hamburgerCheckbox5:checked + .pwa-hamburger5 > .pwa-hamburgerLayer5:nth-of-type(2) {
+	opacity: 0;
+	transition: opacity 0.1s ease;
+}
+
+.pwa-hamburgerCheckbox5:checked + .pwa-hamburger5 > .pwa-hamburgerLayer5:nth-of-type(3) {
+	margin-top: 15px;
+	transform: rotate(-405deg);
+	transition: margin-top 0.2s ease 0.1s, transform 0.2s ease 0.1s;
+}
+
+/* .pwa-hamburgerMenu6 */
+
+.pwa-hamburgerMenu6 {
+	position: relative;
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburger6,
+.pwa-hamburgerCheckbox6 {
+	position: absolute;
+	z-index: 998;
+}
+
+.pwa-hamburger6 {
+	width: 30px;
+	height: 30px;
+}
+
+.pwa-hamburgerCheckbox6 {
+	transform: scale(3);
+	opacity: 0;
+	z-index: 999;
+}
+
+.pwa-hamburgerLayer6 {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 3px;
+}
+
+.pwa-hamburgerLayer6:nth-of-type(1) {
+	margin-top: 7px;
+}
+
+.pwa-hamburgerLayer6:nth-of-type(2) {
+	margin-top: 15px;
+}
+
+.pwa-hamburgerLayer6:nth-of-type(3) {
+	margin-top: 23px;
+}
+
+.pwa-hamburgerCheckbox6:checked + .pwa-hamburger6 > .pwa-hamburgerLayer6:nth-of-type(1) {
+	margin-top: 15px;
+	transform: rotate(45deg);
+}
+
+.pwa-hamburgerCheckbox6:checked + .pwa-hamburger6 > .pwa-hamburgerLayer6:nth-of-type(2) {
+	opacity: 0;
+}
+
+.pwa-hamburgerCheckbox6:checked + .pwa-hamburger6 > .pwa-hamburgerLayer6:nth-of-type(3) {
+	margin-top: 15px;
+	transform: rotate(-45deg);
 }
