@@ -43,7 +43,7 @@ Feel free to [open an issue](https://github.com/philippwilhelm/sunset.css/issues
 
 ## Contributing
 
-Please see [CONTRIBUTE](https://github.com/philippwilhelm/sunset.css/wiki/3.-Contribute).
+Please see [CONTRIBUTING.md](https://github.com/philippwilhelm/sunset.css/blob/main/CONTRIBUTING.md).
 
 ## License
 
