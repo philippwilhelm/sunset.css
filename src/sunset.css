@@ -1594,6 +1594,106 @@
 	transition: transform var(--pwa-animation-duration) ease, border-radius calc(0.5 * var(--pwa-animation-duration)) ease;
 }
 
+/* pwa-background-cornerTopLeft */
+
+.pwa-background-cornerTopLeft {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+}
+
+.pwa-background-cornerTopLeft::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	background: var(--pwa-animated-background);
+	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
+}
+
+.pwa-background-cornerTopLeft:hover::after, .pwa-background-cornerTopLeft:active::after, .pwa-background-cornerTopLeft:focus::after {
+	width: 100%;
+	height: 100%;
+	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
+}
+
+/* pwa-background-cornerTopRight */
+
+.pwa-background-cornerTopRight {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+}
+
+.pwa-background-cornerTopRight::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	background: var(--pwa-animated-background);
+	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
+}
+
+.pwa-background-cornerTopRight:hover::after, .pwa-background-cornerTopRight:active::after, .pwa-background-cornerTopRight:focus::after {
+	width: 100%;
+	height: 100%;
+	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
+}
+
+/* pwa-background-cornerBottomLeft */
+
+.pwa-background-cornerBottomLeft {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+}
+
+.pwa-background-cornerBottomLeft::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	background: var(--pwa-animated-background);
+	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
+}
+
+.pwa-background-cornerBottomLeft:hover::after, .pwa-background-cornerBottomLeft:active::after, .pwa-background-cornerBottomLeft:focus::after {
+	width: 100%;
+	height: 100%;
+	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
+}
+
+/* pwa-background-cornerBottomRight */
+
+.pwa-background-cornerBottomRight {
+	display: inline-block;
+	position: relative;
+	background: var(--pwa-original-background);
+}
+
+.pwa-background-cornerBottomRight::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 0;
+	height: 0;
+	background: var(--pwa-animated-background);
+	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
+}
+
+.pwa-background-cornerBottomRight:hover::after, .pwa-background-cornerBottomRight:active::after, .pwa-background-cornerBottomRight:focus::after {
+	width: 100%;
+	height: 100%;
+	transition: width var(--pwa-animation-duration) ease, height var(--pwa-animation-duration) ease;
+}
+
 /* .pwa-background-ease */
 
 .pwa-background-ease {
