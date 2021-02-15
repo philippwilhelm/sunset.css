@@ -8,8 +8,6 @@ This library offers a collection of different CSS-powered transitions.
 
 [sunsetcss.com](https://sunsetcss.com/)
 
-[Twitter](https://twitter.com/sunset_css)
-
 ## Download
 
 The only file you will need is [sunset.min.css](https://github.com/philippwilhelm/sunset.css/blob/main/dist/sunset.min.css).
