@@ -6,7 +6,7 @@ This library offers a collection of different CSS-powered transitions.
 
 [Documentation](https://github.com/philippwilhelm/sunset.css/wiki)
 
-[sunsetcss.com](https://sunsetcss.com/)
+[Website](philippwilhelm.github.io)
 
 ## Download
 
@@ -33,7 +33,7 @@ After downloading the source-file, you will have to include it in your .html-fil
 </head>
 ```
 
-The next step is to go to  [sunsetcss.com](https://sunsetcss.com) and find the effect you like. Click the respective field and the needed class-name will automatically be copied to your clipboard.
+The next step is to go to  [our website](philippwilhelm.github.io) and find the effect you like. Click the respective field and the needed class-name will automatically be copied to your clipboard.
 
 ## Bug-report
 
